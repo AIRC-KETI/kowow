@@ -1,177 +1,68 @@
-<p align="center">
- <img width="70%" src="docs/source/\_static/img/parlai.png" />
-</p>
-
-<p align="center">
-   <a href="https://github.com/facebookresearch/ParlAI/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="CircleCI" />
-  </a>
-   <a href="https://pypi.org/project/parlai/">
-    <img src="https://img.shields.io/pypi/v/parlai?color=blue&label=release" alt="CircleCI" />
-  </a>
-    <a href="https://circleci.com/gh/facebookresearch/ParlAI/tree/master">
-    <img src="https://img.shields.io/circleci/build/github/facebookresearch/ParlAI/master" alt="Coverage" />
-  </a>
-    <a href="https://codecov.io/gh/facebookresearch/ParlAI">
-    <img src="https://img.shields.io/codecov/c/github/facebookresearch/ParlAI" alt="GitHub contributors" />
-  </a>
-    <a href="https://img.shields.io/github/contributors/facebookresearch/ParlAI">
-    <img src="https://img.shields.io/github/contributors/facebookresearch/ParlAI"/>
-  </a>
-    <a href="https://twitter.com/parlai_parley">
-    <img src="https://img.shields.io/twitter/follow/parlai_parley?label=Twitter&style=social" alt="Twitter" />
-  </a>
- </p>
- 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-
-[ParlAI](http://parl.ai) (pronounced “par-lay”) is a python framework for
-sharing, training and testing dialogue models, from open-domain chitchat, to
-task-oriented dialogue, to visual question answering.
-
-Its goal is to provide researchers:
-
-- **100+ popular datasets available all in one place, with the same API**, among them [PersonaChat](https://arxiv.org/abs/1801.07243), [DailyDialog](https://arxiv.org/abs/1710.03957), [Wizard of Wikipedia](https://openreview.net/forum?id=r1l73iRqKm), [Empathetic Dialogues](https://arxiv.org/abs/1811.00207), [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/), [MS MARCO](http://www.msmarco.org/), [QuAC](https://www.aclweb.org/anthology/D18-1241), [HotpotQA](https://hotpotqa.github.io/), [QACNN & QADailyMail](https://arxiv.org/abs/1506.03340), [CBT](https://arxiv.org/abs/1511.02301), [BookTest](https://arxiv.org/abs/1610.00956), [bAbI Dialogue tasks](https://arxiv.org/abs/1605.07683), [Ubuntu Dialogue](https://arxiv.org/abs/1506.08909), [OpenSubtitles](http://opus.lingfil.uu.se/OpenSubtitles.php),  [Image Chat](https://arxiv.org/abs/1811.00945), [VQA](http://visualqa.org/), [VisDial](https://arxiv.org/abs/1611.08669) and [CLEVR](http://cs.stanford.edu/people/jcjohns/clevr/). See the complete list [here](https://github.com/facebookresearch/ParlAI/blob/master/parlai/tasks/task_list.py).
-- a wide set of [**reference models**](https://parl.ai/docs/agents_list.html) -- from retrieval baselines to Transformers.
-- a large [zoo of **pretrained models**](https://parl.ai/docs/zoo.html) ready to use off-the-shelf
-- seamless **integration of [Amazon Mechanical Turk](https://www.mturk.com/mturk/welcome)** for data collection and human evaluation
-- **integration with [Facebook Messenger](https://parl.ai/docs/tutorial_chat_service.html)** to connect agents with humans in a chat interface
-- a large range of **helpers to create your own agents** and train on several tasks with **multitasking**
-- **multimodality**, some tasks use text and images
 
 
-ParlAI is described in the following paper:
-[“ParlAI: A Dialog Research Software Platform", arXiv:1705.06476](https://arxiv.org/abs/1705.06476)
-or see these [more up-to-date slides](https://drive.google.com/file/d/1JfUW4AVrjSp8X8Fp0_rTTRoLxUfW0aUm/view?usp=sharing).
-
-Follow us on [Twitter](https://twitter.com/parlai_parley) and check out our [Release
-notes](https://github.com/facebookresearch/ParlAI/releases) to see the latest
-information about new features & updates, and the website
-[http://parl.ai](http://parl.ai) for further docs. For an archived list of updates,
-check out [NEWS.md](https://github.com/facebookresearch/ParlAI/blob/master/NEWS.md).
-
-<p align="center"><img width="90%" src="https://raw.githubusercontent.com/facebookresearch/ParlAI/master/docs/source/_static/img/parlai_example.png" /></p>
-
-## Interactive Tutorial
-
-For those who want to start with ParlAI now, you can try our [Colab Tutorial](https://colab.research.google.com/drive/1bRMvN0lGXaTF5fuTidgvlAl-Lb41F7AD#scrollTo=KtVz5dCUmFkN).
-
-## Installing ParlAI
-
-ParlAI currently requires Python3.7+ and [Pytorch](https://pytorch.org) 1.6 or higher.
-Dependencies of the core modules are listed in [`requirements.txt`](https://github.com/facebookresearch/ParlAI/blob/master/requirements.txt). Some
-models included (in [`parlai/agents`](https://github.com/facebookresearch/ParlAI/tree/master/parlai/agents)) have additional requirements.
-We *strongly* recommend you install ParlAI in a [venv](https://docs.python.org/3/library/venv.html) or [conda](https://www.anaconda.com/) environment.
-
-**Standard Installation**
-
-If you want to use ParlAI without modifications, you can install it with:
+## Install parlai package
 
 ```bash
-pip install parlai
+python setup.py develop
 ```
 
-**Development Installation**
+## Download Korean Wizard of Wikipedia (KoWoW)
 
-Many users will want to modify some parts of ParlAI. To set up a development
-environment, run the following commands to clone the repository and install
-ParlAI:
+[Download](https://drive.google.com/file/d/14-aXE1bcvpkD9B69LXL48mC53VUoW0wH/view?usp=sharing)
 
 ```bash
-git clone https://github.com/facebookresearch/ParlAI.git ~/ParlAI
-cd ~/ParlAI; python setup.py develop
+tar xvzf wizard_of_wikipedia_ko.tar.gz
+mv wizard_of_wikipedia_ko data/
 ```
 
-All needed data will be downloaded to `~/ParlAI/data`. If you need to clear out
-the space used by these files, you can safely delete these directories and any
-files needed will be downloaded again.
+# language combinations
 
-## Documentation
+| Name | Knowledge | Utterance |
+| ------------- | ------------- | ------------- |
+| ko  | Korean  | Korean  |
+| ke  | Korean  | English  |
+| ek  | English  | Korean  |
+| en  | English  | English  |
 
- - [Quick Start](https://parl.ai/docs/tutorial_quick.html)
- - [Basics: world, agents, teachers, action and observations](https://parl.ai/docs/tutorial_basic.html)
- - [Creating a new dataset/task](http://parl.ai/docs/tutorial_task.html)
- - [List of available tasks/datasets](https://parl.ai/docs/tasks.html)
- - [Creating a seq2seq agent](https://parl.ai/docs/tutorial_torch_generator_agent.html)
- - [List of available agents](https://parl.ai/docs/agents_list.html)
- - [Model zoo (list pretrained models)](https://parl.ai/docs/zoo.html)
- - [Running crowdsourcing tasks](http://parl.ai/docs/tutorial_crowdsourcing.html)
- - [Plug into Facebook Messenger](https://parl.ai/docs/tutorial_chat_service.html)
+# Test splits
+| Name | topic |
+| ------------- | ------------- |
+| random_split  | Seen  |
+| topic_split  | Unseen  |
 
 
-## Examples
+## training on KoWoW (ek dataset)
 
-A large set of scripts can be found in [`parlai/scripts`](https://github.com/facebookresearch/ParlAI/tree/master/parlai/scripts). Here are a few of them.
-Note: If any of these examples fail, check the [installation section](#installing-parlai) to see if you have missed something.
-
-Display 10 random examples from the SQuAD task
 ```bash
-parlai display_data -t squad
+CUDA_VIS_DEV=0
+LANG_TYPE=ek
+
+NUM_EPOCHS=10
+MODEL_TYPE=T5EndToEndTwoAgent
+MODEL_NAME=mymodel
+
+CUDA_VISIBLE_DEVICES="${CUDA_VIS_DEV}" parlai train_model -t wizard_of_wikipedia_ko:generator:topic_split --ln ${LANG_TYPE} -m projects.wizard_of_wikipedia_ko.generator.t5:${MODEL_TYPE}  -mf model_data/model/${MODEL_NAME}  --t5-model-arch "KETI-AIR/ke-t5-base" --t5-encoder-model-arch "KETI-AIR/ke-t5-small" --log-every-n-secs 10 --validation-patience 12 --validation-metric ppl --validation-metric-mode min --validation-every-n-epochs 5 -bs 4 --max_knowledge 32 --num-epochs ${NUM_EPOCHS} --tensorboard-log true --tensorboard-logdir ./model_data/tf_logs/${MODEL_NAME}
 ```
 
-Evaluate an IR baseline model on the validation set of the Personachat task:
+## test topic split(Unseen) on KoWoW ek dataset
+
 ```bash
-parlai eval_model -m ir_baseline -t personachat -dt valid
+CUDA_VIS_DEV=0
+LANG_TYPE=ek
+MODEL_NAME=mymodel
+
+CUDA_VISIBLE_DEVICES="${CUDA_VIS_DEV}" parlai eval_model -t wizard_of_wikipedia_ko:generator:topic_split -dt test --ln ${LANG_TYPE} -mf model_data/model/${MODEL_NAME} -bs 4 --inference beam --beam-size 4
 ```
 
-Train a single layer transformer on PersonaChat (requires pytorch and torchtext).
-Detail: embedding size 300, 4 attention heads,  2 epochs using batchsize 64, word vectors are initialized with fasttext and the other elements of the batch are used as negative during training.
+## Display sample - topic split(Unseen)
+
+You can display predicted knowledge using `enc_output` field.
+
 ```bash
-parlai train_model -t personachat -m transformer/ranker -mf /tmp/model_tr6 --n-layers 1 --embedding-size 300 --ffn-size 600 --n-heads 4 --num-epochs 2 -veps 0.25 -bs 64 -lr 0.001 --dropout 0.1 --embedding-type fasttext_cc --candidates batch
+CUDA_VIS_DEV=0
+LANG_TYPE=ek
+MODEL_NAME=mymodel
+NUM_EXAMPLES=300
+
+CUDA_VISIBLE_DEVICES="${CUDA_VIS_DEV}" parlai display_model -t wizard_of_wikipedia_ko:generator:topic_split -dt test --ln ${LANG_TYPE} -mf ./model_data/model/${MODEL_NAME} -bs 1 --inference beam --beam-size 4 --display-add-fields checked_sentence,enc_output -n NUM_EXAMPLES
 ```
-
-## Code Organization
-
-The code is set up into several main directories:
-
-- [**core**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/core): contains the primary code for the framework
-- [**agents**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/agents): contains agents which can interact with the different tasks (e.g. machine learning models)
-- [**scripts**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/scripts): contains a number of useful scripts, like training, evaluating, interactive chatting, ...
-- [**tasks**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/tasks): contains code for the different tasks available from within ParlAI
-- [**mturk**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/mturk): contains code for setting up Mechanical Turk, as well as sample MTurk tasks
-- [**messenger**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/chat_service/services/messenger): contains code for interfacing with Facebook Messenger
-- [**utils**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/utils): contains a wide number of frequently used utility methods
-- [**crowdsourcing**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/crowdsourcing): contains code for running crowdsourcing tasks, such as on Amazon Mechanical Turk
-- [**chat_service**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/chat_service/services/messenger): contains code for interfacing with services such as Facebook Messenger
-- [**zoo**](https://github.com/facebookresearch/ParlAI/tree/master/parlai/zoo): contains code to directly download and use pretrained models from our model zoo
-
-## Support
-If you have any questions, bug reports or feature requests, please don't hesitate to post on our [Github Issues page](https://github.com/facebookresearch/ParlAI/issues).
-You may also be interested in checking out our [FAQ](https://parl.ai/docs/faq.html) and
-our [Tips n Tricks](https://parl.ai/docs/tutorial_tipsntricks.html).
-
-Please remember to follow our [Code of Conduct](https://github.com/facebookresearch/ParlAI/blob/master/CODE_OF_CONDUCT.md).
-
-## Contributing
-We welcome PRs from the community!
-
-You can find information about contributing to ParlAI in our
-[Contributing](https://github.com/facebookresearch/ParlAI/blob/master/CONTRIBUTING.md)
-document.
-
-
-## The Team
-ParlAI is currently maintained by Moya Chen, Emily Dinan, Dexter Ju, Mojtaba
-Komeili, Spencer Poff, Pratik Ringshia, Stephen Roller, Kurt Shuster,
-Eric Michael Smith, Megan Ung, Jack Urbanek, Jason Weston, Mary Williamson,
-and Jing Xu. Stephen Roller is the current Tech Lead.
-
-Former major contributors and maintainers include Alexander H. Miller, Margaret
-Li, Will Feng, Adam Fisch, Jiasen Lu, Antoine Bordes, Devi Parikh, Dhruv Batra,
-Filipe de Avila Belbute Peres, Chao Pan, and Vedant Puri.
-
-## Citation
-
-Please cite the [arXiv paper](https://arxiv.org/abs/1705.06476) if you use ParlAI in your work:
-
-```
-@article{miller2017parlai,
-  title={ParlAI: A Dialog Research Software Platform},
-  author={{Miller}, A.~H. and {Feng}, W. and {Fisch}, A. and {Lu}, J. and {Batra}, D. and {Bordes}, A. and {Parikh}, D. and {Weston}, J.},
-  journal={arXiv preprint arXiv:{1705.06476}},
-  year={2017}
-}
-```
-
-## License
-ParlAI is MIT licensed. See the **[LICENSE](https://github.com/facebookresearch/ParlAI/blob/master/LICENSE)** file for details.
