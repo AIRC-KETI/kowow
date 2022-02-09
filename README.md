@@ -8,7 +8,7 @@ python setup.py develop
 
 ## Download Korean Wizard of Wikipedia (KoWoW)
 
-[Download](https://drive.google.com/file/d/14-aXE1bcvpkD9B69LXL48mC53VUoW0wH/view?usp=sharing)
+[Download](https://drive.google.com/drive/folders/1L_6WLUYkUtwOEOVC9KI6w4-xkW9ZkUKp?usp=sharing)
 
 ```bash
 tar xvzf wizard_of_wikipedia_ko.tar.gz
