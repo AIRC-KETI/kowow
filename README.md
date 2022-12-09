@@ -66,3 +66,6 @@ NUM_EXAMPLES=300
 
 CUDA_VISIBLE_DEVICES="${CUDA_VIS_DEV}" parlai display_model -t wizard_of_wikipedia_ko:generator:topic_split -dt test --ln ${LANG_TYPE} -mf ./model_data/model/${MODEL_NAME} -bs 1 --inference beam --beam-size 4 --display-add-fields checked_sentence,enc_output -n NUM_EXAMPLES
 ```
+
+## Acknowledgement
+본 연구는 정부(과학기술정보통신부)의 재원으로 지원을 받아 수행된 연구입니다. (정보통신기획평가원, 2022-0-00320, 상황인지 및 사용자 이해를 통한 인공지능 기반 1:1 복합대화 기술 개발)
